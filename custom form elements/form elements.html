@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Form Elements</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Custom Checkbox Styles */
+      .container input[type="checkbox"] {
+        display: none;
+      }
+
+      .container label {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .container label:before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .container input[type="checkbox"]:checked + label:before {
+        background-color: #4caf50;
+        border-color: #4caf50;
+      }
+
+      .container label:after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 6px;
+        border-left: 2px solid white;
+        border-bottom: 2px solid white;
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-65%) rotate(-45deg);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .container input[type="checkbox"]:checked + label:after {
+        opacity: 1;
+      }
+
+      /* Custom Radio Button Styles */
+      .container input[type="radio"] {
+        display: none;
+      }
+
+      .container label.radio {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .container label.radio:before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .container input[type="radio"]:checked + label.radio:before {
+        border-color: #4caf50;
+      }
+
+      .container label.radio:after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .container input[type="radio"]:checked + label.radio:after {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Custom Form Elements</h2>
+      <form>
+        <h3>Checkboxes</h3>
+        <input type="checkbox" id="option1" name="option1" value="option1" />
+        <label for="option1">Option 1</label>
+
+        <input type="checkbox" id="option2" name="option2" value="option2" />
+        <label for="option2">Option 2</label>
+
+        <input type="checkbox" id="option3" name="option3" value="option3" />
+        <label for="option3">Option 3</label>
+
+        <h3>Radio Buttons</h3>
+        <input type="radio" id="radio1" name="radio" value="radio1" />
+        <label for="radio1" class="radio">Option 1</label>
+
+        <input type="radio" id="radio2" name="radio" value="radio2" />
+        <label for="radio2" class="radio">Option 2</label>
+
+        <input type="radio" id="radio3" name="radio" value="radio3" />
+        <label for="radio3" class="radio">Option 3</label>
+      </form>
+    </div>
+  </body>
+</html>
